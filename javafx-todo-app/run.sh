@@ -88,7 +88,17 @@ if [ ! -d "$JAVAFX_DIR" ]; then
     
     echo "Extracting JavaFX..."
     unzip -q lib/javafx.zip -d lib/
-    mv lib/javafx-${JAVAFX_VERSION} "$JAVAFX_DIR"
+    
+    # Find the extracted directory (could be javafx-sdk-21 or javafx-21)
+    EXTRACTED_DIR=$(find lib -maxdepth 1 -type d -name "javafx*${JAVAFX_VERSION}*" | head -n 1)
+    
+    if [ -n "$EXTRACTED_DIR" ]; then
+        mv "$EXTRACTED_DIR" "$JAVAFX_DIR"
+    else
+        echo "Error: Could not find extracted JavaFX directory"
+        exit 1
+    fi
+    
     rm lib/javafx.zip
     
     echo "JavaFX downloaded successfully!"
