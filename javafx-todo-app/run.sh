@@ -8,18 +8,50 @@ echo "====================="
 
 # Check if Java is installed
 if ! command -v java &> /dev/null; then
-    echo "Error: Java is not installed. Please install Java 17 or higher."
+    echo "Error: Java is not installed!"
+    echo ""
+    echo "Please install Java 17 or higher:"
+    echo ""
+    echo "Option 1 - Using Homebrew (recommended for macOS):"
+    echo "  brew install openjdk@17"
+    echo "  sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk"
+    echo ""
+    echo "Option 2 - Download from Oracle:"
+    echo "  Visit: https://www.oracle.com/java/technologies/downloads/#java17"
+    echo ""
+    echo "Option 3 - Download from Adoptium (OpenJDK):"
+    echo "  Visit: https://adoptium.net/temurin/releases/?version=17"
     exit 1
 fi
 
 # Check Java version
-JAVA_VERSION=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}' | cut -d'.' -f1)
+JAVA_VERSION_OUTPUT=$(java -version 2>&1)
+echo "Detected Java: $JAVA_VERSION_OUTPUT" | head -n 1
+
+# Extract version number (works for both 1.8.x and 17.x formats)
+if [[ $JAVA_VERSION_OUTPUT =~ \"([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
+    MAJOR=${BASH_REMATCH[1]}
+    MINOR=${BASH_REMATCH[2]}
+    if [[ $MAJOR -eq 1 ]]; then
+        JAVA_VERSION=$MINOR
+    else
+        JAVA_VERSION=$MAJOR
+    fi
+elif [[ $JAVA_VERSION_OUTPUT =~ \"([0-9]+)\" ]]; then
+    JAVA_VERSION=${BASH_REMATCH[1]}
+else
+    echo "Warning: Could not determine Java version. Proceeding anyway..."
+    JAVA_VERSION=17
+fi
+
 if [[ "$JAVA_VERSION" -lt 17 ]]; then
     echo "Error: Java 17 or higher is required. Current version: $JAVA_VERSION"
+    echo ""
+    echo "Please upgrade Java using one of the methods above."
     exit 1
 fi
 
-echo "Java version check: OK"
+echo "Java version check: OK (Java $JAVA_VERSION)"
 
 # Create directories if they don't exist
 mkdir -p lib
