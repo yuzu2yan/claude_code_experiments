@@ -1,63 +1,63 @@
-# Claude Code 実験プロジェクト
+# Claude Code Experiments
 
-🤖 Claude Codeを使用して様々なプログラミング実験を行うリポジトリです。
+🤖 A repository for various programming experiments using Claude Code.
 
-## 概要
+## Overview
 
-このリポジトリは、Anthropic社のClaude Codeを活用して、異なるプログラミング言語やフレームワークを使った実験的なプロジェクトを作成・収集する場です。AIアシスタントとの対話を通じて、効率的なコード生成と開発プロセスを探求しています。
+This repository serves as a collection of experimental projects created with different programming languages and frameworks, leveraging Anthropic's Claude Code. Through interactive dialogue with an AI assistant, I explore efficient code generation and development processes.
 
-## プロジェクト一覧
+## Projects
 
 ### 🌐 [my-website](./my-website/)
-Next.js 14とTypeScriptを使用したモダンなWebサイト
-- **技術スタック**: Next.js、TypeScript、Tailwind CSS
-- **特徴**: レスポンシブデザイン、App Router使用
+A modern website built with Next.js 14 and TypeScript
+- **Tech Stack**: Next.js, TypeScript, Tailwind CSS
+- **Features**: Responsive design, App Router
 
 ### 🎮 [rust-game](./rust-game/)
-Rustで実装したターミナルベースの数当てゲーム
-- **技術スタック**: Rust、colored、rand
-- **特徴**: カラフルなUI、ゲーム統計機能、難易度ヒント
+A terminal-based number guessing game implemented in Rust
+- **Tech Stack**: Rust, colored, rand
+- **Features**: Colorful UI, game statistics, difficulty hints
 
 ### 📊 [language-benchmark](./language-benchmark/)
-C++、Rust、Pythonの実行速度を比較するベンチマークツール
-- **技術スタック**: C++、Rust、Python、matplotlib
-- **特徴**: 同一アルゴリズムの実装、自動計測、結果の可視化
+A benchmark tool comparing execution speeds of C++, Rust, and Python
+- **Tech Stack**: C++, Rust, Python, matplotlib
+- **Features**: Identical algorithm implementations, automated measurements, result visualization
 
-## 実験の目的
+## Experiment Objectives
 
-1. **多言語対応**: 様々なプログラミング言語でのClaude Codeの活用方法を探る
-2. **効率的な開発**: AIアシスタントを使った迅速なプロトタイピング
-3. **ベストプラクティス**: 各言語・フレームワークにおける最適な実装方法の学習
-4. **創造的な実験**: 新しいアイデアや技術の組み合わせを試す
+1. **Multi-language Support**: Explore how to leverage Claude Code across various programming languages
+2. **Efficient Development**: Rapid prototyping using AI assistance
+3. **Best Practices**: Learn optimal implementation methods for each language/framework
+4. **Creative Experimentation**: Try new ideas and technology combinations
 
-## 使用方法
+## Usage
 
-各プロジェクトにはそれぞれのREADMEが含まれています。詳細な使用方法は各ディレクトリ内のドキュメントを参照してください。
+Each project contains its own README with detailed usage instructions. Please refer to the documentation within each directory.
 
 ```bash
-# リポジトリのクローン
+# Clone the repository
 git clone https://github.com/yuzu2yan/claude_test.git
 cd claude_test
 
-# 各プロジェクトへ移動
+# Navigate to a specific project
 cd [project-name]
 ```
 
-## 今後の実験予定
+## Planned Experiments
 
-- 機械学習モデルの実装
-- マイクロサービスアーキテクチャ
-- リアルタイムアプリケーション
-- クロスプラットフォームモバイルアプリ
+- Machine learning model implementations
+- Microservice architecture
+- Real-time applications
+- Cross-platform mobile apps
 
-## コントリビューション
+## Contributing
 
-このリポジトリは個人的な実験場ですが、アイデアや提案があれば Issue でお知らせください。
+While this is a personal experimentation playground, feel free to open an issue if you have ideas or suggestions.
 
-## ライセンス
+## License
 
-各プロジェクトのライセンスについては、それぞれのディレクトリを確認してください。
+Please check each project directory for specific license information.
 
 ---
 
-*このリポジトリのコードは [Claude Code](https://claude.ai/code) の支援を受けて作成されています。*
+*The code in this repository was created with assistance from [Claude Code](https://claude.ai/code).*
