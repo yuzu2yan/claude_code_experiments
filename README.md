@@ -23,6 +23,11 @@ A benchmark tool comparing execution speeds of C++, Rust, and Python
 - **Tech Stack**: C++, Rust, Python, matplotlib
 - **Features**: Identical algorithm implementations, automated measurements, result visualization
 
+### ☕ [javafx-todo-app](./javafx-todo-app/)
+A modern JavaFX todo list application with task management features
+- **Tech Stack**: Java 17, JavaFX 21, Maven
+- **Features**: Task CRUD operations, filtering, custom UI components, no Maven required (run.sh included)
+
 ## Experiment Objectives
 
 1. **Multi-language Support**: Explore how to leverage Claude Code across various programming languages
@@ -36,8 +41,8 @@ Each project contains its own README with detailed usage instructions. Please re
 
 ```bash
 # Clone the repository
-git clone https://github.com/yuzu2yan/claude_test.git
-cd claude_test
+git clone https://github.com/yuzu2yan/claude_code_experiments.git
+cd claude_code_experiments
 
 # Navigate to a specific project
 cd [project-name]
