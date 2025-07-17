@@ -38,33 +38,54 @@ javafx-todo-app/
 
 ## How to Run
 
-### Using Maven
+### Method 1: Using the Run Script (No Maven Required)
 
-1. Clone the repository and navigate to the project directory:
-   ```bash
-   cd javafx-todo-app
-   ```
-
-2. Run the basic Todo App:
-   ```bash
-   mvn clean javafx:run
-   ```
-
-3. To run the Enhanced Todo App, update the main class in pom.xml:
-   ```xml
-   <mainClass>com.example.todoapp.EnhancedTodoApp</mainClass>
-   ```
-   Then run:
-   ```bash
-   mvn clean javafx:run
-   ```
-
-### Building a JAR
-
-To create an executable JAR:
+The easiest way to run the application:
 
 ```bash
-mvn clean package
+cd javafx-todo-app
+./run.sh
+```
+
+The script will automatically:
+- Check your Java version
+- Download JavaFX if needed
+- Compile and run the application
+
+### Method 2: Using Maven
+
+If you have Maven installed:
+
+```bash
+cd javafx-todo-app
+mvn clean javafx:run
+```
+
+### Installing Maven (Optional)
+
+**macOS (using Homebrew):**
+```bash
+brew install maven
+```
+
+**macOS/Linux (manual installation):**
+```bash
+# Download Maven
+curl -O https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+
+# Extract
+tar -xzvf apache-maven-3.9.6-bin.tar.gz
+
+# Move to /opt
+sudo mv apache-maven-3.9.6 /opt/maven
+
+# Add to PATH (add to ~/.zshrc or ~/.bashrc)
+export PATH=/opt/maven/bin:$PATH
+```
+
+**Verify installation:**
+```bash
+mvn -version
 ```
 
 ## Usage
